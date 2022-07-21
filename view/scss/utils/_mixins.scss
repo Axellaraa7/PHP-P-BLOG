@@ -1,0 +1,96 @@
+@mixin displayFlex($justify:center, $aContent:center,$aItems:center,$flow:row wrap,$gap: false){
+  display: flex;
+  justify-content: $justify;
+  align-content: $aContent;
+  align-items: $aItems;
+  flex-flow: $flow;
+  @if $gap != false{
+    gap: $gap;
+  }
+}
+
+@mixin displayGrid($jItems: center, $jContent: center, $aItems:center, $aContent: center, $gapColumn: false, $gapRow: false){
+  display: grid;
+  justify-items: $jItems;
+  justify-content: $jContent;
+  align-items: $aItems;
+  align-content: $aContent;
+  @if $gapColumn != false{
+    column-gap: $gapColumn;
+  }
+  @if $gapRow != false{
+    row-gap: $gapRow;
+  }
+}
+
+@mixin setBounds($width: auto, $height: auto, $pad: 0, $mar: 0){
+  width: $width;
+  height: $height;
+  @if $pad != 0{
+    padding: $pad;
+  }
+  @if $mar != 0{
+    margin: $mar;
+  }
+}
+
+  
+@mixin setBorder($color, $radius: ''){
+  border: {
+    style: solid;
+    width: 2px;
+    color: $color;
+  }
+  @if $radius != '' {
+    border-radius: $radius;
+  } 
+}
+
+@mixin setBackground($repeat: no-repeat, $size: cover, $position: center, $color: false, $url: false){
+  background: {
+    repeat: $repeat;
+    size: $size;
+    position: $position;
+  }
+  @if($color != false){
+    background-color: $color;
+  }
+
+  @if($url != false){
+    background-image: $url;
+  }
+}
+
+@mixin setTransition($transitions...){
+  transition: $transitions;
+}
+
+@mixin setTransform($transforms...){
+  transform: join($transforms, null, space);
+  //join($list1,$list2,$separator,$bracketed)
+}
+
+@mixin setLetter($size: 1.6rem, $weight: auto, $align: auto, $transform: auto, $color: $dark, $spacing: auto ){
+  font: {
+    size: $size;
+    weight: $weight;
+  }
+  text: {
+    align: $align;
+    transform: $transform;
+  }
+  color: $color;
+  letter-spacing: $spacing;
+}
+
+@mixin setButtonStyle($bgColor,$color){
+  @include setBorder($bgColor,.5rem);
+  background-color: $bgColor;
+  color: $color;
+  cursor: pointer;
+}
+
+@mixin setButtonHover($color){
+  background-color: transparent;
+  color: $color;
+}

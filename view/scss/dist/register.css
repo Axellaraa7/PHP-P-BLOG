@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  font-size: 0.625rem;
+}
+
+.btn {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: auto;
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 1px;
+  width: auto;
+  height: auto;
+  padding: 1rem 2.2rem;
+  transition: all 0.25s ease 0s;
+}
+.btnMain {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #cc701e;
+  border-radius: 0.5rem;
+  background-color: #cc701e;
+  color: #eee;
+  cursor: pointer;
+}
+.btnMain:hover {
+  background-color: transparent;
+  color: #333;
+}
+.btnSec {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #1e7bcc;
+  border-radius: 0.5rem;
+  background-color: #1e7bcc;
+  color: #eee;
+  cursor: pointer;
+}
+.btnSec:hover {
+  background-color: transparent;
+  color: #333;
+}
+
+.container-700 {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 2rem;
+  width: 700px;
+  height: auto;
+  padding: 4rem 2rem;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #eee;
+  border-radius: 12px;
+  box-shadow: 0px 0px 12px 3px #eee;
+}
+
+.form-container {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+.formElementPh {
+  width: auto;
+  height: auto;
+  padding: 1rem 2rem;
+}
+
+.formElementPh-2 {
+  width: auto;
+  height: auto;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 5rem;
+}
+
+.formElementUp {
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 1em 2rem;
+}
+.formElementUp:focus-within .labelUp {
+  top: -0.5rem;
+}
+
+.labelUp {
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  transition: all 0.4s ease 0s;
+}
+
+.inputText-150 {
+  width: 150px;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: auto;
+  transition: all 0.4s ease 0s;
+}
+
+.inputText-350 {
+  width: 350px;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: auto;
+  transition: all 0.4s ease 0s;
+}
+
+.itUp {
+  color: white;
+}
+.itUp:focus {
+  outline: none;
+  color: #333;
+}
+
+.formConfirmation {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  gap: 1em;
+  width: 350px;
+  height: auto;
+  padding: 1rem 2rem;
+}
+
+.formConfirmation > div:nth-child(1) {
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
+.formConfirmation > div:last-child {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.messageButton {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  row-gap: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  width: auto;
+  height: auto;
+  padding: 1.5rem 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #cc701e;
+  font-size: 3.2rem;
+  font-weight: auto;
+  text-align: auto;
+  text-transform: auto;
+  color: #eee;
+  letter-spacing: auto;
+}
+
+main {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: auto;
+  height: auto;
+  padding: 3rem 0;
+  font-size: 1.6rem;
+  font-weight: auto;
+  text-align: auto;
+  text-transform: auto;
+  color: #333;
+  letter-spacing: auto;
+}
+
+hr {
+  width: 500px;
+  border: 1px solid #aaa;
+}

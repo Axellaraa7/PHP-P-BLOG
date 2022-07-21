@@ -1,0 +1,20 @@
+@import "./utils/mixins", "./utils/utils","./utils/container","./utils/forms";
+
+header{
+  @include displayFlex();
+  @include setBounds($pad: 1.5rem 0);
+  @include setBackground($color: $main);
+  @include setLetter($size: 3.2rem,$color: $white);
+}
+
+main{
+  @include displayGrid();
+  @include setBounds($pad: 3rem 0);
+  @include setLetter($color: $dark);
+}
+
+hr{
+  width: 500px;
+  border: 1px solid #aaa;
+}
+

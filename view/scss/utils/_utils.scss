@@ -1,0 +1,45 @@
+$mainH: 28;
+$mainS: 74%;
+$mainL: 46%;
+$main: hsla($mainH,$mainS,$mainL,1);
+$secH: 208;
+$secS: 74%;
+$secL: 46%;
+$sec: hsla($secH,$secS,$secL,1);
+$thirdH: 46;
+$thirdS: 100%;
+$thirdL: 50%;
+$third: hsla($thirdH,$thirdS,$thirdL,1);
+$dark: #333;
+$white: #eee;
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root{
+  font-size: .625rem;
+}
+
+.btn{
+  display:block;
+  @include setLetter($weight: 700, $transform: uppercase, $spacing: 1px);
+  @include setBounds($pad: 1rem 2.2rem);
+  @include setTransition(all .25s ease 0s);
+  &Main{
+    @include setButtonStyle($main,$white);
+    &:hover{
+      @include setButtonHover($dark);
+    }
+  }
+  &Sec{
+    @include setButtonStyle($sec,$white);
+    &:hover{
+      @include setButtonHover($dark);
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.formElementPh{
+  @include setBounds($pad: 1rem 2rem);
+}
+
+.formElementPh-2{
+  @include setBounds($pad: 1rem 0);
+  @include displayFlex($justify: space-between, $flow: row nowrap, $gap: 5rem);
+}
+
+.formElementUp{
+  position: relative;
+  @include setBounds($pad: 1em 2rem);
+  &:focus-within .labelUp{
+    top: -.5rem;
+  }
+}
+
+.labelUp{
+  position: absolute;
+  top:50%;
+  left: 3rem;
+  @include setTransform(translateY(-50%));
+  @include setTransition(all .4s ease 0s);
+}
+
+.inputText-150{
+  @include setBounds(150px,auto,.5rem 1rem,auto);
+  @include setTransition(all .4s ease 0s);
+}
+
+.inputText-350{
+  @include setBounds(350px,auto,.5rem 1rem,auto);
+  @include setTransition(all .4s ease 0s);
+}
+
+.itUp{
+  color: white;
+  &:focus{
+    outline: none;
+    color: $dark
+  }
+}
+
+.formConfirmation{
+  @include displayFlex($flow: column wrap,$gap: 1em);
+  @include setBounds($width: 350px, $pad: 1rem 2rem);
+}
+
+.formConfirmation>div:nth-child(1){
+  align-self: flex-start;
+  @include displayFlex($gap: 1rem);
+}
+
+.formConfirmation>div:last-child{
+  @include setBounds($width: 100%);
+  @include displayFlex();
+}
+
+.messageButton{
+  @include displayGrid($gapRow: 1rem);
+}
