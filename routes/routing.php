@@ -8,6 +8,11 @@ $route->route("/", function(){
   else require_once("./view/login.php");
 });
 
+$route->route("/index.php",function(){
+  if(isset($_SESSION["logged"])) require_once("./view/blog.php");
+  else require_once("./view/login.php");
+});
+
 $route->route("/home", fn() => require_once("./view/blog.php"));
 
 $route->route("/login",fn() => include_once("./view/login.php"));

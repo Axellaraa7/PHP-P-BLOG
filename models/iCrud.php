@@ -1,5 +1,5 @@
 <?php 
-interface Crud{
+interface iCrud{
   public function getAll();
   public function getById($id);
   public function insert($data);

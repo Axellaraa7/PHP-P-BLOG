@@ -1,4 +1,6 @@
 <?php 
+require_once("./models/iCrud.php");
+
 class UserModel implements iCrud{
   private $connection,$table,$id,$username,$name,$lastname,$email;
 
@@ -21,7 +23,22 @@ class UserModel implements iCrud{
   public function getAll(){
     return pg_fetch_all(pg_query("SELECT * FROM $this->table"),PGSQL_ASSOC);
   }
-  
+
+  public function getById($id){
+    $prepare = $this->connection->prepare("SELECT * FROM $this->table WHERE id = ");
+  }
+
+  public function insert($data){
+
+  }
+
+  public function update($data,$id){
+
+  }
+
+  public function delete($id){
+
+  }
 }
 
 ?>
