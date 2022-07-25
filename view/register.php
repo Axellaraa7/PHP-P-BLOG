@@ -3,13 +3,15 @@ $title = "BLOGGIE - REGISTER";
 $stylesheet = "register";
 include_once("./view/templates/head.php");
 /*----------------------*/
-if(!empty($_POST)){
+if(!empty($_POST) && $_POST["agreement"]){
   require_once("./controller/UserController.php");
   $userController = new UserController();
   if($userController->insert($_POST)){
     session_start();
     $_SESSION["logged"] = true;
     header("Location: ".$_SERVER["HTTP_ORIGIN"]."/home");
+  }else{
+
   }
   
 }
@@ -19,6 +21,8 @@ if(!empty($_POST)){
 </header>
 <main>
   <section class="container-700">
+    
+    <?php if(isset($insertError) && $insertError == false) echo "<div class='alert alertError'>Ocurrió un error al momento de inserta el registro...</div>"; ?>
     <form action="" method="post" class="form-container">
       <div class="formElementPh">
         <!-- <label for="username" class="labels">Username</label> -->
@@ -44,11 +48,11 @@ if(!empty($_POST)){
       </div>
       <div class="formElementPh">
         <!-- <label for="password2" class="labels">Confirm your Password</label> -->
-        <input type="password" name="password2" id="password2" class="inputText-350 " placeholder="Confirm your password" required>
+        <input type="password" name="password2" id="password2" class="inputText-350 " placeholder="Confirm your password">
       </div>
       <div class="formConfirmation">
         <div>
-          <input type="checkbox" name="agreements" id="agreement" class="inputBox" required>
+          <input type="checkbox" name="agreement" id="agreement" class="inputBox" required>
           <label for="agreement" class="labels">Acepto los términos y condiciones</label>
         </div>
         <div>

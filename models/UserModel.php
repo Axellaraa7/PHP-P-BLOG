@@ -25,11 +25,20 @@ class UserModel implements iCrud{
   }
 
   public function getById($id){
-    $prepare = $this->connection->prepare("SELECT * FROM $this->table WHERE id = ");
+
+  }
+
+  public function getUser($data){
+    $results = $this->userExists($data["username"])[0];
+    $results = (!empty($results)) ? $results : $this->emailExists($data["username"])[0];
+    if(empty($results)) return false;
+    return (password_verify($data["password"],$results["password"])) ? array("name"=>$results["name"],"lastname"=>$results["lastname"],"username"=>$results["username"]) : false;
   }
 
   public function insert($data){
-
+    pg_prepare($this->connection,"insertuser","INSERT INTO $this->table (username,name,lastname,email,password) VALUES ($1,$2,$3,$4,$5)");
+    $execute = pg_execute($this->connection,"insertuser",array($data["username"],$data["name"],$data["lastname"],$data["email"],password_hash($data["password"],PASSWORD_DEFAULT)));
+    return $execute;
   }
 
   public function update($data,$id){
@@ -38,6 +47,18 @@ class UserModel implements iCrud{
 
   public function delete($id){
 
+  }
+
+  private function userExists($username){
+    pg_prepare($this->connection,"getuser","SELECT * FROM  $this->table WHERE username = $1");
+    $userCount =  pg_fetch_all(pg_execute($this->connection,"getuser",array($username)));
+    return $userCount; 
+  }
+
+  private function emailExists($username){
+    pg_prepare($this->connection,"getemail","SELECT * FROM  $this->table WHERE email = $1");
+    $userCount =  pg_fetch_all(pg_execute($this->connection,"getemail",array($username)),PGSQL_ASSOC);
+    return $userCount;
   }
 }
 
