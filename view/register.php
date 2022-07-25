@@ -9,7 +9,9 @@ if(!empty($_POST) && $_POST["agreement"]){
   if($userController->insert($_POST)){
     session_start();
     $_SESSION["logged"] = true;
-    header("Location: ".$_SERVER["HTTP_ORIGIN"]."/home");
+    $_SESSION["username"] = $_POST["username"];
+    //header("Location: ".$_SERVER["HTTP_ORIGIN"]."/home");
+    header("Location: ./home");
   }else{
 
   }
