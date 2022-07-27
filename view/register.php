@@ -7,9 +7,11 @@ if(!empty($_POST) && $_POST["agreement"]){
   require_once("./controller/UserController.php");
   $userController = new UserController();
   if($userController->insert($_POST)){
+    $data = $userController->getUser($_POST["username"]);
     session_start();
     $_SESSION["logged"] = true;
-    $_SESSION["username"] = $_POST["username"];
+    $_SESSION["username"] = $data["username"];
+    $_SESSION["idUser"] = $data["id"];
     //header("Location: ".$_SERVER["HTTP_ORIGIN"]."/home");
     header("Location: ./home");
   }else{

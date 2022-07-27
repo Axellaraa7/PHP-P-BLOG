@@ -10,8 +10,10 @@ if(!empty($_POST)){
   if(!empty($data)){
     $_SESSION["logged"] = true;
     $_SESSION["username"] = $data["username"];
+    $_SESSION["idUser"] = $data["id"];
     if(isset($_POST["agreement"]) && $_POST["agreement"] == "on") setcookie("username",$data["username"],60*5);
-    header("Location: ".$_SERVER["HTTP_ORIGIN"]."/home");
+    // header("Location: ".$_SERVER["HTTP_ORIGIN"]."/home");
+    header("Location: ./home");
   }else $alert = true;
 }
 ?>

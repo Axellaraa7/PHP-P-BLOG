@@ -32,7 +32,8 @@ class UserModel implements iCrud{
     $results = $this->userExists($data["username"])[0];
     $results = (!empty($results)) ? $results : $this->emailExists($data["username"])[0];
     if(empty($results)) return false;
-    return (password_verify($data["password"],$results["password"])) ? array("name"=>$results["name"],"lastname"=>$results["lastname"],"username"=>$results["username"]) : false;
+    return (password_verify($data["password"],$results["password"])) ? $results : false;
+    /* return (password_verify($data["password"],$results["password"])) ? array("name"=>$results["name"],"lastname"=>$results["lastname"],"username"=>$results["username"]) : false; */
   }
 
   public function insert($data){

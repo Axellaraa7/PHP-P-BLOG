@@ -1,6 +1,7 @@
 <?php 
 // $explode = explode("/",$_SERVER["SCRIPT_FILENAME"]);
 // $filename = substr(array_pop($explode),0,-4);
+$banJS = false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
