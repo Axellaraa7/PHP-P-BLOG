@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: auto;
+  text-align: auto;
+  text-transform: auto;
+  color: #333;
+  letter-spacing: auto;
+}
+
+:root {
+  font-size: 0.625rem;
+}
+
+.btn {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: auto;
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 1px;
+  width: auto;
+  height: auto;
+  padding: 1rem 2.2rem;
+  transition: all 0.25s ease 0s;
+}
+.btnMain {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #cc701e;
+  border-radius: 0.5rem;
+  background-color: #cc701e;
+  color: #eee;
+  cursor: pointer;
+}
+.btnMain:hover {
+  background-color: transparent;
+  color: #333;
+}
+.btnSec {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #1e7bcc;
+  border-radius: 0.5rem;
+  background-color: #1e7bcc;
+  color: #eee;
+  cursor: pointer;
+}
+.btnSec:hover {
+  background-color: transparent;
+  color: #333;
+}
+
+.container-700 {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 2rem;
+  width: 700px;
+  height: auto;
+  padding: 4rem 2rem;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #eee;
+  border-radius: 12px;
+  box-shadow: 0px 0px 12px 3px #eee;
+}
+
+.form-container {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+.blogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  width: auto;
+  height: auto;
+  padding: 1rem 3rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #cc701e;
+}
+
+.blogHeader h1 {
+  font-size: 3.2rem;
+  font-weight: auto;
+  text-align: auto;
+  text-transform: auto;
+  color: #eee;
+  letter-spacing: 2px;
+}
+
+.navHeader ul {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 3rem;
+}
+
+.navHeader ul li {
+  list-style: none;
+}
+
+.navLink {
+  display: block;
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: auto;
+  text-align: auto;
+  text-transform: auto;
+  color: #eee;
+  letter-spacing: auto;
+}
+.navLink::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 0%;
+  background-color: #eee;
+  transition: width 0.5s ease 0s, padding 0.1s ease 0.5s;
+}
+.navLink:hover::before {
+  padding: 1px;
+  width: 100%;
+  transition: width 0.5s ease 0.1s, padding 0.1s ease 0s;
+}
+
+.imgUser {
+  display: block;
+  width: 48px;
+  height: auto;
+  margin: 0 auto;
+}

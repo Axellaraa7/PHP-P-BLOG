@@ -1,5 +1,5 @@
 <?php
-// if(empty($_SESSION)) header("Location:".$_SERVER["HTTP_ORIGIN"]."/");
+// if(empty($_SESSION)) header("Location: ./");
 require_once("./controller/UserController.php");
 $title = "BLOGGIE / HOME";
 $stylesheet = "home";
@@ -7,7 +7,6 @@ $banJS = true;
 include_once("./view/templates/head.php");
 include_once("./view/templates/headerBlog.php");
 $userController = new UserController();
-print_r($_SESSION);
 ?>
 <main>
   <section>

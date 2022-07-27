@@ -21,6 +21,8 @@ $white: #eee;
   text-decoration: none;
 }
 
+h1{ @include setLetter($size: 3.2rem); }
+
 :root{
   font-size: .625rem;
 }

@@ -83,6 +83,18 @@
   padding: 1rem 2rem;
 }
 
+.formElementPh-2 {
+  width: auto;
+  height: auto;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 5rem;
+}
+
 .formElementUp {
   position: relative;
   width: auto;
@@ -98,6 +110,14 @@
   top: 50%;
   left: 3rem;
   transform: translateY(-50%);
+  transition: all 0.4s ease 0s;
+}
+
+.inputText-150 {
+  width: 150px;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: auto;
   transition: all 0.4s ease 0s;
 }
 

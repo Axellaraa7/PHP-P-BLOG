@@ -33,7 +33,6 @@
     margin: $mar;
   }
 }
-
   
 @mixin setBorder($color, $radius: ''){
   border: {
@@ -70,7 +69,7 @@
   //join($list1,$list2,$separator,$bracketed)
 }
 
-@mixin setLetter($size: 1.6rem, $weight: auto, $align: auto, $transform: auto, $color: $dark, $spacing: auto ){
+@mixin setLetter($size: 1.6rem, $weight: auto, $align: auto, $transform: auto, $color: $dark, $spacing: auto){
   font: {
     size: $size;
     weight: $weight;
