@@ -1,5 +1,4 @@
 <footer></footer>
-<?php if($banJS) echo "<script src='./view/js/api-rest.js' defer></script>"; ?>
-<script src='./view/js/api-rest.js' defer></script>
+<?php if($banJS) echo "<script src='./view/js/index.js' defer type='module'></script>"; ?>
 </body>
 </html>

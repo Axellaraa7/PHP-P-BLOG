@@ -1,5 +1,49 @@
 @import "./utils/mixins","./utils/utils","./utils/container";
+@import "./utils/forms";
 @import "./utils/header";
 
+.container-1140>div{
+  flex: 1 1 100%;
+}
 
+.formPost{
+  @include displayFlex();
+}
 
+.postNode{
+  flex: 1 1 100%;
+  @include setLetter($size: 1.6rem);
+  @include setBounds($pad: 1rem);
+}
+
+.fileImgButton{
+  flex: 1 1 100%;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.fileImgButton textarea{
+  @include setBounds($width: 100%, $pad: 1rem);
+  resize: none;
+}
+
+.fileImgButton div{
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  @include displayFlex($gap: 1rem);
+  @include setLetter($size: 2.2rem, $color: $sec);
+}
+
+.fileImgButton div label{
+  @include displayFlex($gap: 1rem);
+  cursor: pointer;
+}
+
+.fileImgButton input{
+  display: none;
+}
+
+.searchUser{
+  @include displayFlex($aItems:stretch, $gap: 1rem);
+}

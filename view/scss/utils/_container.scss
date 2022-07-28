@@ -1,8 +1,20 @@
-.container-700{
-  @include displayFlex($aContent: space-around,$gap: 2rem);
-  @include setBounds($width: 700px, $pad: 4rem 2rem);
+.container-{
   @include setBorder($color: $white, $radius: 12px);
   box-shadow: 0px 0px 12px 3px $white;
+  @include displayFlex($gap: 2rem);
+  &700{
+    @extend .container-;
+    @include displayFlex($aContent: space-around,$gap: 2rem);
+    @include setBounds($width: 720px, $pad: 4rem 2rem, $mar: 2rem 0);
+  }
+  &1140{
+    @extend .container-;
+    @include setBounds($width: 1140px, $pad: 3rem 2rem, $mar: 2rem auto);
+  }
+  &1280{
+    @extend .container-;
+    @include setBounds($width: 1280px, $pad: 4rem 2rem, $mar: 2rem auto);
+  }
 }
 
 .form-container{

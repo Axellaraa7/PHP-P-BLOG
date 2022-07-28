@@ -10,6 +10,19 @@
   font-size: 0.625rem;
 }
 
+h1 {
+  font-size: 3.2rem;
+  font-weight: auto;
+  text-align: auto;
+  text-transform: auto;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+header h1 {
+  color: white;
+}
+
 .btn {
   display: block;
   font-size: 1.6rem;
@@ -49,7 +62,33 @@
   background-color: transparent;
   color: #333;
 }
+.btnThird {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ffc400;
+  border-radius: 0.5rem;
+  background-color: #ffc400;
+  color: #333;
+  cursor: pointer;
+}
+.btnThird:hover {
+  background-color: transparent;
+  color: #333;
+}
 
+.container-, .container-1280, .container-1140, .container-700 {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #eee;
+  border-radius: 12px;
+  box-shadow: 0px 0px 12px 3px #eee;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 2rem;
+}
 .container-700 {
   display: flex;
   justify-content: center;
@@ -57,14 +96,22 @@
   align-items: center;
   flex-flow: row wrap;
   gap: 2rem;
-  width: 700px;
+  width: 720px;
   height: auto;
   padding: 4rem 2rem;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #eee;
-  border-radius: 12px;
-  box-shadow: 0px 0px 12px 3px #eee;
+  margin: 2rem 0;
+}
+.container-1140 {
+  width: 1140px;
+  height: auto;
+  padding: 3rem 2rem;
+  margin: 2rem auto;
+}
+.container-1280 {
+  width: 1280px;
+  height: auto;
+  padding: 4rem 2rem;
+  margin: 2rem auto;
 }
 
 .form-container {
@@ -81,6 +128,11 @@
   width: auto;
   height: auto;
   padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-flow: row wrap;
 }
 
 .formElementPh-2 {
@@ -103,30 +155,61 @@
 }
 .formElementUp:focus-within .labelUp {
   top: -0.5rem;
+  color: #333;
 }
 
+.label, .labelSearch, .labelUp {
+  transition: all 0.4s ease 0s;
+}
 .labelUp {
   position: absolute;
   top: 50%;
   left: 3rem;
   transform: translateY(-50%);
-  transition: all 0.4s ease 0s;
+  font-size: 1.6rem;
+  font-weight: auto;
+  text-align: auto;
+  text-transform: auto;
+  color: #aaa;
+  letter-spacing: auto;
+}
+.labelSearch {
+  width: auto;
+  height: auto;
+  padding: 0 1rem;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: #eee;
+  cursor: pointer;
+}
+.labelSearch:hover {
+  color: #333;
 }
 
+.inputText-, .inputText-350, .inputText-250, .inputText-150 {
+  transition: all 0.4s ease 0s;
+  outline: none;
+}
 .inputText-150 {
   width: 150px;
   height: auto;
   padding: 0.5rem 1rem;
   margin: auto;
-  transition: all 0.4s ease 0s;
 }
-
+.inputText-250 {
+  width: 250px;
+  height: auto;
+  padding: 0.5rem 1rem;
+  margin: auto;
+}
 .inputText-350 {
   width: 350px;
   height: auto;
   padding: 0.5rem 1rem;
   margin: auto;
-  transition: all 0.4s ease 0s;
 }
 
 .itUp {
@@ -191,12 +274,6 @@ header {
   background-size: cover;
   background-position: center;
   background-color: #cc701e;
-  font-size: 3.2rem;
-  font-weight: auto;
-  text-align: auto;
-  text-transform: auto;
-  color: #eee;
-  letter-spacing: auto;
 }
 
 main {

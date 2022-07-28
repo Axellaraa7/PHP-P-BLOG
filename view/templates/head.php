@@ -1,6 +1,4 @@
 <?php 
-// $explode = explode("/",$_SERVER["SCRIPT_FILENAME"]);
-// $filename = substr(array_pop($explode),0,-4);
 $banJS = false;
 ?>
 <!DOCTYPE html>
@@ -12,6 +10,7 @@ $banJS = false;
   <title><?php echo $title ?></title>
   <!-- <link rel="stylesheet" href="<?php echo "./view/scss/dist/$filename.css"; ?>"> -->
   <link rel="stylesheet" href="./view/scss/dist/<?php echo $stylesheet.".css";?>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   

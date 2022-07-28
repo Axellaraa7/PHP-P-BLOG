@@ -9,7 +9,7 @@ class PostModel{
   }
 
   public function getAll(){
-    $query = pg_query($this->connection, "SELECT * FROM $this->table");
+    $query = pg_query($this->connection, "SELECT u.username, p.title, p.body, p.img, p.date FROM $this->table AS p INNER JOIN ".'"php-blog".usuarios as u ON p.id_user = u.id order by p.date desc');
     return json_encode(pg_fetch_all($query,PGSQL_ASSOC));
   }
 

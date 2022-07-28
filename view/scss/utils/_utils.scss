@@ -21,10 +21,18 @@ $white: #eee;
   text-decoration: none;
 }
 
-h1{ @include setLetter($size: 3.2rem); }
-
 :root{
   font-size: .625rem;
+}
+
+h1{ @include setLetter($size: 3.2rem, $spacing: 1px); }
+
+header h1{
+  color: white;
+}
+
+input,select,textarea{
+  outline: none;
 }
 
 .btn{
@@ -40,6 +48,12 @@ h1{ @include setLetter($size: 3.2rem); }
   }
   &Sec{
     @include setButtonStyle($sec,$white);
+    &:hover{
+      @include setButtonHover($dark);
+    }
+  }
+  &Third{
+    @include setButtonStyle($third,$dark);
     &:hover{
       @include setButtonHover($dark);
     }

@@ -4,7 +4,6 @@ header{
   @include displayFlex();
   @include setBounds($pad: 1.5rem 0);
   @include setBackground($color: $main);
-  @include setLetter($size: 3.2rem,$color: $white);
 }
 
 main{

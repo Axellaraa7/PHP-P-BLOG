@@ -4,7 +4,6 @@ header{
   @include displayFlex();
   @include setBounds($pad: 1.5rem 0);
   @include setBackground($color: $main);
-  @include setLetter($size: 3.2rem,$color: $white);
 }
 
 main{
@@ -14,7 +13,7 @@ main{
 }
 
 hr{
-  width: 500px;
-  border: 1px solid #aaa;
+  @include setBounds(100%,auto,0,0 5rem);
+  @include setBorder(#ccc);
 }
 

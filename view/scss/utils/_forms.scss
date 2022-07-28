@@ -1,5 +1,6 @@
 .formElementPh{
   @include setBounds($pad: 1rem 2rem);
+  @include displayFlex();
 }
 
 .formElementPh-2{
@@ -12,25 +13,45 @@
   @include setBounds($pad: 1em 2rem);
   &:focus-within .labelUp{
     top: -.5rem;
+    color: $dark;
   }
 }
 
-.labelUp{
-  position: absolute;
-  top:50%;
-  left: 3rem;
-  @include setTransform(translateY(-50%));
+.label{
   @include setTransition(all .4s ease 0s);
+  &Up{
+    @extend .label;
+    position: absolute;
+    top:50%;
+    left: 3rem;
+    @include setTransform(translateY(-50%));
+    @include setLetter($size: 1.6rem, $color: #aaa);
+  }
+  &Search{
+    @extend .label;
+    @include setBounds($pad: 0 1rem);
+    @include setButtonStyle(transparent, $white);
+    &:hover{
+      color: $dark;
+    }
+  }
 }
 
-.inputText-150{
-  @include setBounds(150px,auto,.5rem 1rem,auto);
+.inputText-{
   @include setTransition(all .4s ease 0s);
-}
-
-.inputText-350{
-  @include setBounds(350px,auto,.5rem 1rem,auto);
-  @include setTransition(all .4s ease 0s);
+  outline: none;
+  &150{
+    @extend .inputText-;
+    @include setBounds(150px,auto,.5rem 1rem,auto);
+  }
+  &250{
+    @extend .inputText-;
+    @include setBounds(250px,auto,.5rem 1rem,auto);
+  }
+  &350{
+    @extend .inputText-;
+    @include setBounds(350px,auto,.5rem 1rem,auto);
+  }
 }
 
 .itUp{
