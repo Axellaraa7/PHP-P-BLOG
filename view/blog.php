@@ -27,6 +27,7 @@ $userController = new UserController();
       </form>
     </div>
   </section>
+  <section class="container-1140" id="bloggie-main"></section>
 </main>
 <?php 
 $banJS = true;

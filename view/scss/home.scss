@@ -47,3 +47,8 @@
 .searchUser{
   @include displayFlex($aItems:stretch, $gap: 1rem);
 }
+
+.post{
+  flex: 1 1 100%;
+  display: block;
+}

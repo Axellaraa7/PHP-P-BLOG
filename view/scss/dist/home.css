@@ -411,3 +411,8 @@ input, select, textarea {
   flex-flow: row wrap;
   gap: 1rem;
 }
+
+.post {
+  flex: 1 1 100%;
+  display: block;
+}
