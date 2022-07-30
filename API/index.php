@@ -13,16 +13,11 @@ $pathImg = "./img/";
 switch($_SERVER["REQUEST_METHOD"]){
   case "GET":
     $postController = new PostController();
-    $results = (isset($_GET["id"])) ? 
-    $postController->getById($_GET["id"]) : 
-    (
-      (isset($_GET["user"])) ?
-      $postController->getByUser($_GET["user"]) :
-      $postController->getAll()
-    );
-/*     if(isset($_GET["id"])) $results = ;
-    else if(isset($_GET["user"])) $results = 
-    else $results =  */
+    if(isset($_GET["id"])) $results = $postController->getById($_GET["id"]);
+    else if(isset($_GET["user"])) $results = $postController->getByUser($_GET["user"]);
+    else if(isset($_GET["posts"]) && isset($_GET["offset"])) $results = $postController->getByOffset($_GET["posts"], $_GET["offset"]);
+    else $results = $postController->getAll();
+
     echo $results;
     break;
 

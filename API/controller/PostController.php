@@ -21,6 +21,10 @@ class PostController{
     return $this->postModel->getByUser($user);
   }
 
+  public function getByOffset($limit,$offset){
+    return $this->postModel->getByOffset($limit,$offset);
+  }
+
   public function insert($data){
     return $this->postModel->insert($data);
   }
