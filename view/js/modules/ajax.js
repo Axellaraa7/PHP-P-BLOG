@@ -5,6 +5,7 @@ const d = document;
 const getPost = async (url) => {
   const res = await fetch(url);
   const data = await res.json();
+  console.log(data);
   const fragment = d.createDocumentFragment();
   data.forEach((post)=>{
     let section = d.createElement("section");

@@ -1,5 +1,6 @@
 export default function PostComponent(data){
   let posts = `
+  <section class="container-1140">
     <div class="userInfo">
       <figure>
         <img alt="profile image"/>
@@ -12,6 +13,7 @@ export default function PostComponent(data){
         <p class="postTitle">${data.title}</p>
         <div class="postContent">${data.body}</div>
   `;
-  if(data.img !== null) posts +="</div></div>";
+  if(data.img !== null) posts +="<figure><img alt='post img' src=''/></figure>";
+  posts +="</div></div></section>";
   return posts;
 }
