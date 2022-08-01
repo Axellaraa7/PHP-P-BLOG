@@ -2,10 +2,9 @@ import PostComponent from "./../components/PostComponent.js";
 
 const d = document;
 
-const getPost = async (url) => {
+const getPost = async (url, callback) => {
   const res = await fetch(url);
   const data = await res.json();
-  console.log(data);
   const fragment = d.createDocumentFragment();
   data.forEach((post)=>{
     let section = d.createElement("section");
@@ -13,8 +12,7 @@ const getPost = async (url) => {
     section.innerHTML = PostComponent(post);
     fragment.appendChild(section);
   });
-  d.getElementById("bloggie-main").appendChild(fragment);
-
+  callback(fragment);
 }
 
 const formPost = async (url, formData) => {

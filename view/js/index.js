@@ -1,11 +1,11 @@
 import { getPost, formPost } from "./modules/ajax.js";
+import { appendChild } from "./modules/appendChild.js";
 
 let posts = 4;
 let offset = 0;
 
 const d = document,
 url = "http://php-projects.localhost/1.API-REST-SPA-BLOG2/API/";
-// let urlOffset = "http://php-projects.localhost/1.API-REST-SPA-BLOG2/API/?posts="+posts+"&offset="+offset;
 let urlOffset = "?posts="+posts+"&offset="+offset;
 
 d.addEventListener("DOMContentLoaded",inicio,false);
@@ -14,13 +14,16 @@ function inicio(){
   switch (location.pathname){
     case "/":
     case "/home":
-      getPost(url+urlOffset);
+      getPost(url+urlOffset,(fragment)=>{d.getElementById("bloggie-main").appendChild(fragment)});
       d.addEventListener("submit",(e) =>{
         e.preventDefault();
         if(e.target.matches("#formPost")){
           const formData = new FormData(e.target);
           formPost(url,formData);
-          getPost(url+urlOffset);
+          getPost(url+"?posts=1&offset=0",(fragment)=>{
+            for(const element of fragment.children){
+            d.getElementById("bloggie-main").insertAdjacentElement("afterbegin",element)};
+          });
         }
       },false);
       d.addEventListener("change", (e) =>{
@@ -37,7 +40,7 @@ function inicio(){
           offset++;
           urlOffset = "?posts="+posts+"&offset="+offset;
           console.log(urlOffset);
-          getPost(url+urlOffset);
+          getPost(url+urlOffset,(fragment)=>{d.getElementById("bloggie-main").appendChild(fragment)});
         }
       });
       break;
