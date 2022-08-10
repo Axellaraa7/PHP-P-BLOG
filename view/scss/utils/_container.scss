@@ -5,15 +5,18 @@
   &700{
     @extend .container-;
     @include displayFlex($aContent: space-around,$gap: 2rem);
-    @include setBounds($width: 720px, $pad: 4rem 2rem, $mar: 2rem 0);
+    @include setBounds($pad: 4rem 2rem, $mar: 1rem 0);
+    max-width: 720px;
   }
   &1140{
     @extend .container-;
-    @include setBounds($width: 1140px, $pad: 3rem 2rem, $mar: 2rem auto);
+    @include setBounds($pad: 3rem 2rem, $mar: 1rem auto);
+    max-width: 1140px;
   }
   &1280{
     @extend .container-;
-    @include setBounds($width: 1280px, $pad: 4rem 2rem, $mar: 2rem auto);
+    @include setBounds($pad: 4rem 2rem, $mar: 1rem auto);
+    max-width: 1280px;
   }
 }
 

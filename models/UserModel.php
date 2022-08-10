@@ -24,15 +24,16 @@ class UserModel implements iCrud{
     return pg_fetch_all(pg_query("SELECT * FROM $this->table"),PGSQL_ASSOC);
   }
 
-  public function getById($id){
-
+  public function getNameUser($id){
+    pg_prepare($this->connection, "getById", "SELECT name,lastname FROM $this->table WHERE id = $1");
+    $results = pg_fetch_row(pg_execute($this->connection, "getById", array($id)));
+    return ($results) ?: false;
   }
 
-  public function getUser($data){
+  public function authUser($data){
     $results = $this->userExists($data["username"])[0];
     $results = (!empty($results)) ? $results : $this->emailExists($data["username"])[0];
-    if(empty($results)) return false;
-    return (password_verify($data["password"],$results["password"])) ? $results : false;
+    return (!empty($results) &&  password_verify($data["password"],$results["password"])) ? $results : false;
     /* return (password_verify($data["password"],$results["password"])) ? array("name"=>$results["name"],"lastname"=>$results["lastname"],"username"=>$results["username"]) : false; */
   }
 

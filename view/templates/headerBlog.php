@@ -1,7 +1,7 @@
 <?php 
 $user = array();
 
-$urlImg = (isset($user["img"]) && file_exists("./db/img/".$user["img"])) ? $user["img"] : "./view/assets/img/user.svg";
+$urlImg = (isset($user["img"]) && file_exists("./db/img/".$user["img"])) ? $user["img"] : "/view/assets/img/user.svg";
 ?>
 <header class="blogHeader">
   <div>
@@ -19,9 +19,12 @@ $urlImg = (isset($user["img"]) && file_exists("./db/img/".$user["img"])) ? $user
         <a href="/">
           <figure>
             <img class="imgUser" src="<?php echo $urlImg; ?>" alt="profile img">
-            <figcaption class="navLink"><?php echo $_SESSION["username"]?></figcaption>
+            <!--<figcaption class="navLink"><?php echo $_SESSION["username"]?></figcaption>-->
           </figure>
         </a>
+      </li>
+      <li>
+        <a href="/?logout=true">Cerrar sesión</a>
       </li>
     </ul>
   </nav>

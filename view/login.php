@@ -6,7 +6,7 @@ include_once("./view/templates/head.php");
 require_once("./controller/UserController.php");
 if(!empty($_POST)){
   $userController = new UserController();
-  $data = $userController->getUser($_POST);
+  $data = $userController->authUser($_POST);
   if(!empty($data)){
     $_SESSION["logged"] = true;
     $_SESSION["username"] = $data["username"];

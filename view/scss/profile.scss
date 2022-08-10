@@ -1,0 +1,50 @@
+@import "./utils/mixins","./utils/utils","./utils/container";
+@import "./utils/forms";
+@import "./utils/header";
+
+.profile_{
+  &background{
+    @include setBounds($width: 100%, $height: 300px);
+    @include setBorder($color: #bbb, $radius: inherit);
+
+    img{
+      @include setBounds($width: 100%, $height: 100%);
+    }
+  }
+
+  &bioUser{
+    @include setBounds($width: 100%, $height: auto, $pad: 0 4rem);
+    @include setBorder($color: #bbb, $radius: inherit);
+  }
+
+  &userImg{
+    @include displayFlex($gap: .5rem);
+    figure{
+      @include setBounds($width: 168px, $height: 168px);
+      @include setBorder($color: #333, $radius: 50%);
+      @include setTransform(translateY(-10px));
+    }
+  }
+
+  &stadisticsUser{
+    flex: 1 1 auto;
+    @include displayFlex($justify: space-between,$aItems: flex-end);
+    @include setBounds($pad: 0 1rem);
+  }
+
+  &infoUser{
+    @include setBounds($pad: 1rem);
+    h2{
+      @include setLetter($size: 2.8rem,$weight: 700, $color: $dark, $spacing: 1px)
+    }
+    p{
+      @include setLetter($size: 2.2rem, $weight: 700, $color: $sec);
+      span{
+        @include setLetter($size: 2.8rem, $color: hsla($mainH,$mainS,62%,1));
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px){
+}

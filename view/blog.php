@@ -1,5 +1,5 @@
 <?php
-if(empty($_SESSION)) header("Location: ./");
+//if(empty($_SESSION)) header("Location: ./");
 require_once("./controller/UserController.php");
 $title = "BLOGGIE / HOME";
 $stylesheet = "home";

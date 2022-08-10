@@ -16,8 +16,12 @@ class UserController{
     return $this->userModel->getAll();
   }
 
-  public function getUser($data){
-    return $this->userModel->getUser($data);
+  public function getNameUser($id){
+    return $this->userModel->getNameUser($id);
+  }
+
+  public function authUser($data){
+    return $this->userModel->authUser($data);
   }
   
   public function insert($data){

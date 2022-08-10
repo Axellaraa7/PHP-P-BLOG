@@ -7,7 +7,10 @@ if(!empty($_POST) && $_POST["agreement"]){
   require_once("./controller/UserController.php");
   $userController = new UserController();
   if($userController->insert($_POST)){
-    $data = $userController->getUser($_POST["username"]);
+    $data = $userController->authUser(array(
+      "username"=>$_POST["username"],
+      "password"=>$_POST["password"]
+    ));
     session_start();
     $_SESSION["logged"] = true;
     $_SESSION["username"] = $data["username"];

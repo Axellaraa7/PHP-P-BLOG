@@ -103,19 +103,19 @@ input, select, textarea {
   width: 720px;
   height: auto;
   padding: 4rem 2rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 .container-1140 {
   width: 1140px;
   height: auto;
   padding: 3rem 2rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 .container-1280 {
   width: 1280px;
   height: auto;
   padding: 4rem 2rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 
 .form-container {

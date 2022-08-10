@@ -12,11 +12,11 @@ class Route{
   }
 
   public function run(){
-    $uri = explode("/",$_SERVER["REQUEST_URI"]);
-    $uri = "/".array_pop($uri);
+    // $uri = explode("/",$_SERVER["REQUEST_URI"]);
+    // $uri = "/".array_pop($uri);
     $found = false;
     foreach($this->routes as $path=>$callback){
-      if($uri !== $path) continue;
+      if($_SERVER["REQUEST_URI"] !== $path) continue;
       $found = true;
       $callback();
     }
