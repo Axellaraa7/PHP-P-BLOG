@@ -93,3 +93,22 @@
   background-color: transparent;
   color: $color;
 }
+
+@mixin setPosition($pos,$t: false, $b: false, $r: false, $l: false, $z: false){
+  position: $pos;
+  @if $t != false{
+    top: $t;
+  }
+  @if $b != false{
+    bottom: $b;
+  }
+  @if $r != false{
+    right: $r;
+  }
+  @if $l != false{
+    left: $l;
+  }
+  @if $z != false{
+    z-index: $z;
+  }
+}

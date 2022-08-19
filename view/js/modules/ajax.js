@@ -10,6 +10,7 @@ const getPost = async (url, callback) => {
     let section = d.createElement("section");
     section.classList.add("post");
     section.innerHTML = PostComponent(post);
+    console.log(section);
     fragment.appendChild(section);
   });
   callback(fragment);

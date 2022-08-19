@@ -36,7 +36,7 @@ function inicio(){
       },false);
       d.addEventListener("scroll",()=>{
         let {scrollTop,clientHeight,scrollHeight} = d.documentElement;
-        if(scrollTop+clientHeight >= scrollHeight){
+        if(scrollTop+clientHeight >= scrollHeight - 1){
           offset++;
           urlOffset = "?posts="+posts+"&offset="+offset;
           console.log(urlOffset);

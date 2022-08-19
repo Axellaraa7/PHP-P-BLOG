@@ -1,4 +1,5 @@
 .blogHeader{
+  position: relative;
   @include displayFlex($justify: space-between);
   @include setBounds($pad: 1rem 3rem);
   @include setBackground($color: $main);
@@ -8,29 +9,39 @@
   @include setLetter($size: 3.2rem, $color: $white, $spacing: 2px);
 }
 
+.hbgMenu-4{
+  display: none;
+}
+
+.menuLine{
+  display: block;
+  width: 64px;
+  background-color: red;
+  border: 2px solid $main;
+}
+
 .navHeader ul{
   @include displayFlex($gap: 3rem);
 }
 
 .navHeader ul li{
   list-style: none;
+  cursor: pointer;
 }
 
 .navLink{
   display: block;
-  position: relative;
+  @include setPosition(relative);
   @include setLetter($size: 1.8rem, $color: $white);
   &::before{
     content: "";
-    position: absolute;
-    top: 100%;
+    @include setPosition($pos: absolute, $t: 100%);
     width: 0%;
-    background-color:$white;
+    @include setBackground($color: $white);
     @include setTransition(width .5s ease 0s, padding .1s ease .5s);
   }
   &:hover::before{
-    padding: 1px;
-    width: 100%;
+    @include setBounds($width: 100%, $pad: 1px);
     @include setTransition(width .5s ease .1s, padding .1s ease 0s);
   }
 }
@@ -38,4 +49,26 @@
 .imgUser{
   display: block;
   @include setBounds(48px,auto,0, 0 auto);
+}
+
+@media screen and (max-width: 960px){
+  .hbgMenu-4{
+    display: block;
+  }
+  
+  .navHeader{
+    @include setBounds($width: 100vw, $height: calc(100vh - 100%));
+    @include setPosition($pos: absolute, $t: 100%, $l: 0, $z: 10);
+    @include setBackground($color: $dark);
+  }
+
+  .navHeader ul{
+    @include setBounds(100%,100%, $pad: 1rem 0);
+    @include displayFlex($justify: space-between, $aItems: stretch, $gap: 0, $flow: column wrap)
+  }
+
+  .navHeader ul > *{
+    @include displayFlex();
+    width: 100%;
+  }
 }
