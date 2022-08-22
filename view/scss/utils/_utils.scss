@@ -59,3 +59,29 @@ input,select,textarea{
     }
   }
 }
+
+.fade{
+  &Out{
+    opacity: 0;
+    visibility: hidden;
+  } 
+}
+
+span.line{
+  width: 50%;
+  &1,&2,&3,&4{
+    @extend .line;
+  }
+  &1{
+    @include setTransform(translateX(3px), rotateZ(45deg));
+  }
+  &2{
+    @include setTransform(translateX(calc(100% - 3px)), translateY(-5px), rotateZ(-45deg));
+  }
+  &3{
+    @include setTransform(translateX(calc(100% - 3px)), translateY(5px), rotate(45deg));
+  }
+  &4{
+    @include setTransform(translateX(3px), rotate(-45deg));
+  }
+}

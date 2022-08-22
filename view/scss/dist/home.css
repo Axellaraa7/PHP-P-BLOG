@@ -80,6 +80,27 @@ input, select, textarea {
   color: #333;
 }
 
+.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+}
+
+span.line, span.line1, span.line2, span.line3, span.line4 {
+  width: 50%;
+}
+span.line1 {
+  transform: translateX(3px) rotateZ(45deg);
+}
+span.line2 {
+  transform: translateX(calc(100% - 3px)) translateY(-5px) rotateZ(-45deg);
+}
+span.line3 {
+  transform: translateX(calc(100% - 3px)) translateY(5px) rotate(45deg);
+}
+span.line4 {
+  transform: translateX(3px) rotate(-45deg);
+}
+
 .container-, .container-1280, .container-1140, .container-700 {
   border-style: solid;
   border-width: 2px;
@@ -87,18 +108,18 @@ input, select, textarea {
   border-radius: 12px;
   box-shadow: 0px 0px 12px 3px #eee;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-flow: row wrap;
   gap: 2rem;
 }
 .container-700 {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: space-around;
   align-items: center;
-  flex-flow: row wrap;
   gap: 2rem;
   width: auto;
   height: auto;
@@ -124,10 +145,10 @@ input, select, textarea {
 .form-container {
   flex: 1 1 100%;
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-flow: column nowrap;
   gap: 0.5rem;
 }
 
@@ -136,10 +157,10 @@ input, select, textarea {
   height: auto;
   padding: 1rem 2rem;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-flow: row wrap;
 }
 
 .formElementPh-2 {
@@ -147,10 +168,10 @@ input, select, textarea {
   height: auto;
   padding: 1rem 0;
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  flex-flow: row nowrap;
   gap: 5rem;
 }
 
@@ -204,19 +225,16 @@ input, select, textarea {
   width: 150px;
   height: auto;
   padding: 0.5rem 1rem;
-  margin: auto;
 }
 .inputText-250 {
   width: 250px;
   height: auto;
   padding: 0.5rem 1rem;
-  margin: auto;
 }
 .inputText-350 {
   width: 350px;
   height: auto;
   padding: 0.5rem 1rem;
-  margin: auto;
 }
 
 .itUp {
@@ -229,10 +247,10 @@ input, select, textarea {
 
 .formConfirmation {
   display: flex;
+  flex-flow: column wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-flow: column wrap;
   gap: 1em;
   width: 350px;
   height: auto;
@@ -242,10 +260,10 @@ input, select, textarea {
 .formConfirmation > div:nth-child(1) {
   align-self: flex-start;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-flow: row wrap;
   gap: 1rem;
 }
 
@@ -253,10 +271,10 @@ input, select, textarea {
   width: 100%;
   height: auto;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-flow: row wrap;
 }
 
 .messageButton {
@@ -271,10 +289,10 @@ input, select, textarea {
 .blogHeader {
   position: relative;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  flex-flow: row wrap;
   width: auto;
   height: auto;
   padding: 1rem 3rem;
@@ -295,21 +313,24 @@ input, select, textarea {
 
 .hbgMenu-4 {
   display: none;
+  cursor: pointer;
 }
 
 .menuLine {
   display: block;
-  width: 64px;
-  background-color: red;
-  border: 2px solid #cc701e;
+  width: 100%;
+  height: auto;
+  margin: 1px 0;
+  border: 2px solid #eee;
+  transition: all 0.3s ease 0s;
 }
 
 .navHeader ul {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-flow: row wrap;
   gap: 3rem;
 }
 
@@ -332,6 +353,7 @@ input, select, textarea {
   content: "";
   position: absolute;
   top: 100%;
+  left: 0;
   width: 0%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -353,9 +375,24 @@ input, select, textarea {
   margin: 0 auto;
 }
 
+.searchUser {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: stretch;
+  gap: 1rem;
+}
+
 @media screen and (max-width: 960px) {
   .hbgMenu-4 {
     display: block;
+    width: 50px;
+    height: auto;
+    padding: 1px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
   }
 
   .navHeader {
@@ -369,6 +406,7 @@ input, select, textarea {
     background-size: cover;
     background-position: center;
     background-color: #333;
+    transition: all 0.5s ease 0s;
   }
 
   .navHeader ul {
@@ -376,20 +414,20 @@ input, select, textarea {
     height: 100%;
     padding: 1rem 0;
     display: flex;
+    flex-flow: column wrap;
     justify-content: space-between;
     align-content: center;
     align-items: stretch;
-    flex-flow: column wrap;
     gap: 0;
   }
 
   .navHeader ul > * {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    flex-flow: row wrap;
     width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .navLink {
+    text-align: center;
   }
 }
 .container-1140 > div {
@@ -398,10 +436,10 @@ input, select, textarea {
 
 .formPost {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-flow: row wrap;
 }
 
 .postNode {
@@ -435,10 +473,10 @@ input, select, textarea {
   bottom: 1rem;
   right: 2rem;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-flow: row wrap;
   gap: 1rem;
   font-size: 2.2rem;
   font-weight: auto;
@@ -450,10 +488,10 @@ input, select, textarea {
 
 .fileImgButton div label {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-flow: row wrap;
   gap: 1rem;
   cursor: pointer;
 }
@@ -464,10 +502,10 @@ input, select, textarea {
 
 .searchUser {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   align-items: stretch;
-  flex-flow: row wrap;
   gap: 1rem;
 }
 

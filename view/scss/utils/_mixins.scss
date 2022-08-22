@@ -1,9 +1,9 @@
 @mixin displayFlex($justify:center, $aContent:center,$aItems:center,$flow:row wrap,$gap: false){
   display: flex;
+  flex-flow: $flow;
   justify-content: $justify;
   align-content: $aContent;
   align-items: $aItems;
-  flex-flow: $flow;
   @if $gap != false{
     gap: $gap;
   }

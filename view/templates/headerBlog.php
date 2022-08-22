@@ -11,7 +11,7 @@ $urlImg = (isset($user["img"]) && file_exists("./db/img/".$user["img"])) ? $user
     <span class="menuLine"></span>
     <span class="menuLine"></span>
   </div>
-  <nav class="navHeader">
+  <nav class="navHeader" id="navHeader">
     <ul>
       <div class="searchUser">
         <input type="text" name="search" id="search" class="inputText-250" placeholder="Buscar en bloggie">

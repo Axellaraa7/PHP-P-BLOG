@@ -5,12 +5,37 @@ let posts = 4;
 let offset = 0;
 
 const d = document,
-url = "http://php-projects.localhost/1.API-REST-SPA-BLOG2/API/";
+url = "http://php-projects.localhost/1.API-REST-SPA-BLOG/API/";
 let urlOffset = "?posts="+posts+"&offset="+offset;
 
-d.addEventListener("DOMContentLoaded",inicio,false);
-
 function inicio(){
+  const lines = d.querySelectorAll(".menuLine"),
+  navHeader = d.getElementById("navHeader");
+  if(window.innerWidth <= 960) navHeader.classList.add("fadeOut");
+  d.addEventListener("click",(e) => {
+    if(e.target.matches(".hbgMenu-4") || e.target.matches(".hbgMenu-4 > *")){
+      lines[0].classList.toggle("line1");
+      lines[1].classList.toggle("line2");
+      lines[2].classList.toggle("line3");
+      lines[3].classList.toggle("line4");
+      navHeader.classList.toggle("fadeOut");
+    }
+  });
+  window.addEventListener("resize",() => {
+    if(window.innerWidth <= 960){
+      navHeader.classList.add("fadeOut");
+      lines[0].classList.remove("line1");
+      lines[1].classList.remove("line2");
+      lines[2].classList.remove("line3");
+      lines[3].classList.remove("line4");
+    }else{
+      navHeader.classList.remove("fadeOut");
+      lines[0].classList.add("line1");
+      lines[1].classList.add("line2");
+      lines[2].classList.add("line3");
+      lines[3].classList.add("line4");
+    }
+  });
   switch (location.pathname){
     case "/":
     case "/home":
@@ -47,3 +72,4 @@ function inicio(){
   }
 }
 
+d.addEventListener("DOMContentLoaded",inicio,false);

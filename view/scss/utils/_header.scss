@@ -11,13 +11,14 @@
 
 .hbgMenu-4{
   display: none;
+  cursor: pointer;
 }
 
 .menuLine{
   display: block;
-  width: 64px;
-  background-color: red;
-  border: 2px solid $main;
+  @include setBounds($width: 100%, $mar: 1px 0);
+  border: 2px solid $white;
+  @include setTransition(all .3s ease 0s);
 }
 
 .navHeader ul{
@@ -35,7 +36,7 @@
   @include setLetter($size: 1.8rem, $color: $white);
   &::before{
     content: "";
-    @include setPosition($pos: absolute, $t: 100%);
+    @include setPosition($pos: absolute, $t: 100%, $l: 0);
     width: 0%;
     @include setBackground($color: $white);
     @include setTransition(width .5s ease 0s, padding .1s ease .5s);
@@ -51,15 +52,61 @@
   @include setBounds(48px,auto,0, 0 auto);
 }
 
+.searchUser{
+  @include displayFlex($aItems:stretch, $gap: 1rem);
+}
+
+// .line{
+//   width: 50%;
+//   &1,&2,&3,&4{
+//     @extend .line;
+//   }
+//   &1{
+//     @include setTransform(translateX(3px), rotateZ(45deg));
+//   }
+//   &2{
+//     @include setTransform(translateX(calc(100% - 3px)), translateY(-5px), rotateZ(-45deg));
+//   }
+//   &3{
+//     @include setTransform(translateX(calc(100% - 3px)), translateY(5px), rotate(45deg));
+//   }
+//   &4{
+//     @include setTransform(translateX(3px), rotate(-45deg));
+//   }
+// }
+
 @media screen and (max-width: 960px){
   .hbgMenu-4{
     display: block;
+    @include setBounds($width: 50px, $pad: 1px);
+    @include setBorder($color: white);
   }
+
+  // .hbgMenu-4:hover .menuLine:nth-child(1){
+  //   @include setTransform(translateX(3px), rotateZ(45deg));
+  //   width: 50%;
+  // }
+
+  // .hbgMenu-4:hover .menuLine:nth-child(2){
+  //   @include setTransform(translateX(calc(100% - 3px)), translateY(-5px), rotateZ(-45deg));
+  //   width: 50%;
+  // }
+
+  // .hbgMenu-4:hover .menuLine:nth-child(3){
+  //   @include setTransform(translateX(calc(100% - 3px)), translateY(5px), rotate(45deg));
+  //   width: 50%;
+  // }
+
+  // .hbgMenu-4:hover .menuLine:nth-child(4){
+  //   @include setTransform(translateX(3px), rotate(-45deg));
+  //   width: 50%;
+  // }
   
   .navHeader{
     @include setBounds($width: 100vw, $height: calc(100vh - 100%));
     @include setPosition($pos: absolute, $t: 100%, $l: 0, $z: 10);
     @include setBackground($color: $dark);
+    @include setTransition(all .5s ease 0s);
   }
 
   .navHeader ul{
@@ -68,7 +115,11 @@
   }
 
   .navHeader ul > *{
-    @include displayFlex();
     width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .navLink{
+    text-align: center;
   }
 }

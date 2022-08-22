@@ -42,15 +42,15 @@
   outline: none;
   &150{
     @extend .inputText-;
-    @include setBounds(150px,auto,.5rem 1rem,auto);
+    @include setBounds(150px,auto,.5rem 1rem);
   }
   &250{
     @extend .inputText-;
-    @include setBounds(250px,auto,.5rem 1rem,auto);
+    @include setBounds(250px,auto,.5rem 1rem);
   }
   &350{
     @extend .inputText-;
-    @include setBounds(350px,auto,.5rem 1rem,auto);
+    @include setBounds(350px,auto,.5rem 1rem);
   }
 }
 
